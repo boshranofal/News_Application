@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/utils/app_constant.dart';
-import 'package:news_application/utils/app_theme.dart';
-import 'package:news_application/utils/routes/app_route.dart';
-import 'package:news_application/utils/routes/app_router.dart';
+import 'package:news_application/core/utils/app_constant.dart';
+import 'package:news_application/core/utils/app_theme.dart';
+import 'package:news_application/core/utils/routes/app_route.dart';
+import 'package:news_application/core/utils/routes/app_router.dart';
 
 void main() {
   runApp(const MyApp());
