@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:news_application/core/utils/app_constant.dart';
 import 'package:news_application/features/home/home_model/top_headlines_response.dart';
-import 'package:news_application/features/search/search_cubit/search_model/everything_body.dart';
+import 'package:news_application/features/search/search_model/everything_body.dart';
 
 class SearchService {
   final dio = Dio();

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:news_application/features/home/home_model/top_headlines_response.dart';
-import 'package:news_application/features/search/search_cubit/search_model/everything_body.dart';
+import 'package:news_application/features/search/search_model/everything_body.dart';
 import 'package:news_application/features/search/search_service/search_service.dart';
 
 part 'search_state.dart';

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_application/core/utils/routes/app_route.dart';
+
 import 'package:news_application/features/home/home_cubit/home_cubit.dart';
 import 'package:news_application/features/home/widget/home_carousel.dart';
 import 'package:news_application/features/home/widget/home_list_news.dart';
@@ -12,7 +14,39 @@ class HomePage extends StatelessWidget {
     final homeCubit = BlocProvider.of<HomeCubit>(context);
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Home Page'),
+          leading: const Icon(
+            Icons.home,
+          ),
+          centerTitle: true,
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'News',
+                style: TextStyle(
+                  color: Colors.orange,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                'App',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoute.search);
+              },
+              icon: const Icon(Icons.search),
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Padding(
