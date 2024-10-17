@@ -15,6 +15,12 @@ class SearchService {
         options: Options(headers: header),
         queryParameters: query.toMap(),
       );
+      if (response.statusCode == 200) {
+        final result = TopHeadlinesResponse.fromMap(response.data);
+        return result.articles ?? [];
+      } else {
+        throw Exception('Failed to load search data from the server');
+      }
     } catch (e) {
       rethrow;
     }
