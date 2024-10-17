@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_application/features/views/home_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_application/features/home/home_cubit/home_cubit.dart';
+import 'package:news_application/features/home/home_page.dart';
 import 'package:news_application/core/utils/routes/app_route.dart';
 
 class AppRouter {
@@ -7,7 +9,16 @@ class AppRouter {
     switch (settings.name) {
       case AppRoute.home:
       default:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) {
+                    final cubit = HomeCubit();
+                    cubit.getHomeCarusel();
+                    cubit.getHomeList();
+                    return cubit;
+                  },
+                  child: const HomePage(),
+                ));
     }
   }
 }
